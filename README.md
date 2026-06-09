@@ -23,7 +23,7 @@ source .venv/bin/activate
 pip install -r backend/requirements.txt
 ```
 
-Install `yt-dlp` if it is not already available:
+The backend requirements file includes FastAPI/Uvicorn, requests, yt-dlp, Whisper, FFmpeg helpers, and pytest for the included tests. Because YouTube extraction changes often, keep yt-dlp current if downloads stop working:
 
 ```bash
 pip install -U yt-dlp
