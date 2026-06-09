@@ -1,0 +1,9 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+yt-dlp==2023.12.30
+requests==2.31.0
+openai-whisper==20231117
+pydantic==2.5.0
+python-dotenv==1.0.0
+aiofiles==23.2.1
