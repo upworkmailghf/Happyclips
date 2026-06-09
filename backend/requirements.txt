@@ -1,9 +1,14 @@
-fastapi==0.104.1
-uvicorn==0.24.0
-python-multipart==0.0.6
-yt-dlp==2023.12.30
-requests==2.31.0
-openai-whisper==20231117
-pydantic==2.5.0
-python-dotenv==1.0.0
-aiofiles==23.2.1
+# Lightweight Happyclips backend dependencies for Termux.
+# No FastAPI, no Pydantic, no Uvicorn, and no Rust/clang-heavy web stack.
+Flask>=3.0,<4.0
+requests>=2.31,<3.0
+yt-dlp>=2024.8.6
+
+# Test dependency for the included unit tests.
+pytest>=8.0,<9.0
+
+# Optional transcription choice:
+# - Recommended on Android: install whisper.cpp with Termux/pkg or build it separately,
+#   then set HAPPYCLIPS_WHISPER_COMMAND.
+# - If your phone can handle the heavier Python Whisper stack, install manually with:
+#   pip install openai-whisper
