@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happyclips AI Clipper</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero card" id="homeScreen">
+        <p class="eyebrow">Localhost AI SaaS for Termux</p>
+        <h1>AI Clipper</h1>
+        <p class="subtitle">Paste a YouTube URL and generate 3 lightweight, short-form clips with transparent AI progress.</p>
+        <form id="processForm" class="url-form">
+          <label for="urlInput">YouTube URL</label>
+          <div class="input-row">
+            <input id="urlInput" name="url" type="url" placeholder="https://youtube.com/watch?v=..." required />
+            <button id="generateButton" type="submit">Generate</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card hidden" id="processingScreen" aria-live="polite">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Processing</p>
+            <h2>AI is building your clips</h2>
+          </div>
+          <div class="loader" aria-label="Loading"></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-meta">
+            <strong id="progressPercent">0%</strong>
+            <span id="currentDetail">Queued</span>
+          </div>
+          <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+        </div>
+        <ol class="steps" id="stepList"></ol>
+        <div class="log-panel">
+          <h3>AI activity log</h3>
+          <ul id="activityLog"></ul>
+        </div>
+      </section>
+
+      <section class="card hidden" id="resultsScreen">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Completed</p>
+            <h2>Your 3 clips are ready</h2>
+          </div>
+          <button id="newJobButton" class="secondary" type="button">New video</button>
+        </div>
+        <div class="results-grid" id="resultsGrid"></div>
+      </section>
+    </main>
+
+    <dialog id="errorModal">
+      <h2>Something went wrong</h2>
+      <p id="errorText"></p>
+      <button id="closeErrorButton" type="button">Close</button>
+    </dialog>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
